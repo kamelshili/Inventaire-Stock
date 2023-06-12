@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.ListSFamille"
+             Title="Liste SFamille">
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <Label x:Name="Lbl_Total" Text="Total : "/>
+            <dxe:TextEdit x:Name="txt_search1" PlaceholderText="Chercher Par Famille" Focused="txt_search1_Focused" Unfocused="txt_search1_Unfocused" TextChanged="txt_search1_TextChanged" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            <ListView x:Name="listInventaire"  VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="listInventaire1_ItemSelected"   ItemTapped="listInventaire1_ItemTapped"
+                  BackgroundColor="WhiteSmoke">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell   Detail="{Binding SFAMILLE}" Height="60"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.ManagementUser"
+             Title="GESTION UTILISATEURS">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <dxe:TextEdit x:Name="txt_search" PlaceholderText="Chercher Par User Name" TextChanged="txt_search_TextChanged" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            <ListView x:Name="listUsers"  VerticalOptions="FillAndExpand" HasUnevenRows="True"   
+                  BackgroundColor="WhiteSmoke"  ItemSelected="listUsers_ItemSelected" ItemTapped="listUsers_ItemTapped"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name_User}"  Height="60"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+                <Frame BorderColor="Black" 
+                    HorizontalOptions="StartAndExpand"  
+        Margin="4,0,0,0"
+                           >
+                    <StackLayout Orientation="Vertical" >
+                        <Label Text="Add" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <ImageButton
+                  x:Name="Btn_AddUser" 
+                  Source="add_business_user.png"
+                  Clicked="Btn_AddUser_Clicked" 
+                  BorderColor="Red"
+                  BackgroundColor="White"  
+                    />
+                    </StackLayout>
+
+                </Frame>
+                <Frame BorderColor="Black" 
+                  HorizontalOptions="CenterAndExpand"  
+
+                           >
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Update" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <ImageButton
+                  x:Name="Btn_UpdateUser" 
+                  Source="edit_male_user.png"
+                  Clicked="Btn_UpdateUser_Clicked" 
+                  BorderColor="Red"
+                  BackgroundColor="White"  
+                  IsEnabled="False"
+                    />
+                    </StackLayout>
+
+
+
+                </Frame>
+                <Frame BorderColor="Black" 
+                            HorizontalOptions="EndAndExpand"  Margin="0,0,4,0"
+
+                           >
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Delete" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <ImageButton
+                  x:Name="Btn_DeleteUser" 
+                  Source="remove_business_user.png"
+                  Clicked="Btn_DeleteUser_Clicked" 
+                  BorderColor="Red"
+                  BackgroundColor="White"  
+                  IsEnabled="False"
+                    />
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" CharacterSpacing="2"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

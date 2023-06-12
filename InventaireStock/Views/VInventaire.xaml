@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="InventaireStock.Views.VInventaire"
+             Title="INVENTAIRE STOCK">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="10">
+                <StackLayout Spacing="8" IsVisible="true">
+                    <cv:CameraView x:Name="cameraView" WidthRequest="100" HeightRequest="100"
+                   CamerasLoaded="camera_View_CamerasLoaded"   />
+                    <dxco:SimpleButton  x:Name="ClickButton" Text="TAKE_PHOTO"  Clicked="ClickButton_Clicked" BackgroundColor="DeepSkyBlue" TextColor="White"  ></dxco:SimpleButton>
+                    <Image   x:Name="My_Image"   ></Image>
+            </StackLayout>
+                <StackLayout Spacing="3" Padding="15">
+                    <!--<Label Text="Code Immo :" FontSize="Medium" />-->
+                    <dxe:TextEdit x:Name="Entry_Immo" LabelText="Code Barre" Text="{Binding CodeImmo, Mode=TwoWay}" Focused="Entry_Immo_Focused" Unfocused="Entry_Immo_Unfocused" ReturnType="Next"  TextChanged="Entry_Immo_TextChanged"  Completed="Entry_Immo_Completed" TextFontSize="Medium"  />
+
+                    <!--<Label Text="Description :" FontSize="Medium" />-->
+                    <StackLayout Orientation="Horizontal" IsVisible="False">
+                        <dxe:TextEdit IsVisible="True" x:Name="Entry_Description" LabelText="Description" Text="{Binding Description, Mode=TwoWay}" ReturnType="Next" Focused="Entry_Description_Focused" Unfocused="Entry_Description_Unfocused" TextChanged="Entry_Description_TextChanged" Completed="Entry_Description_Completed"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"    />
+                        <ImageButton x:Name="Img_Button_Filter" Source="search.png"  Clicked="Img_Button_Filter_Clicked"   BackgroundColor="White"/>
+                    </StackLayout>
+
+                    <!--<Label Text="Famille :" FontSize="Medium" />-->
+
+                    <StackLayout Orientation="Horizontal" IsVisible="True">
+                        <dxe:TextEdit x:Name="Entry_Famille" LabelText="Description " Text="{Binding FAMILLE, Mode=TwoWay}" ReturnType="Next" Focused="Entry_Famille_Focused" Unfocused="Entry_Famille_Unfocused" TextChanged="Entry_Famille_TextChanged" Completed="Entry_Famille_Completed"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"    />
+                        <ImageButton x:Name="Img_Button_Filter_Famille" Source="search.png"  Clicked="Img_Button_Filter_Famille_Clicked"   BackgroundColor="White"/>
+                    </StackLayout>
+
+                    <!--<Label Text="Sous Famille :" FontSize="Medium" />-->
+
+                    <StackLayout Orientation="Horizontal" IsVisible="false">
+                        <dxe:TextEdit x:Name="Entry_SFamille" LabelText="Sous Famille" Text="{Binding SFAMILLE, Mode=TwoWay}" ReturnType="Next" Focused="Entry_SFamille_Focused" Unfocused="Entry_SFamille_Unfocused" TextChanged="Entry_SFamille_TextChanged" Completed="Entry_SFamille_Completed"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"    />
+                        <ImageButton x:Name="Img_Button_Filter_SFamille" Source="search.png"   Clicked="Img_Button_Filter_SFamille_Clicked"   BackgroundColor="White"/>
+                    </StackLayout>
+
+                    <!--<Label Text="Marque :" FontSize="Medium" />-->
+
+                    <StackLayout Orientation="Horizontal" IsVisible="False" >
+                        <dxe:TextEdit x:Name="Entry_Marque"   LabelText="Marque" Text="{Binding MARQUE, Mode=TwoWay}" ReturnType="Next" Focused="Entry_Marque_Focused" Unfocused="Entry_Marque_Unfocused" TextChanged="Entry_Marque_TextChanged" Completed="Entry_Marque_Completed"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"    />
+                        <ImageButton x:Name="Img_Button_Filter_Marque"   Source="search.png"  Clicked="Img_Button_Filter_Marque_Clicked"   BackgroundColor="White"/>
+                    </StackLayout>
+
+                    <!--<Label Text="Modèle :" FontSize="Medium" />-->
+
+                    <StackLayout Orientation="Horizontal" IsVisible="False" >
+                        <dxe:TextEdit x:Name="Entry_Modele"   LabelText="Modèle" Text="{Binding MODELE, Mode=TwoWay}" ReturnType="Next" Focused="Entry_Modele_Focused" Unfocused="Entry_Modele_Unfocused" TextChanged="Entry_Modele_TextChanged" Completed="Entry_Modele_Completed"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"    />
+                        <ImageButton x:Name="Img_Button_Filter_Modele"   Source="search.png"  Clicked="Img_Button_Filter_Modele_Clicked"   BackgroundColor="White" />
+                    </StackLayout>
+
+                    <Label Text="Etat :" FontSize="Medium" />
+                    <Picker x:Name="Picker_Etat"  SelectedItem="{Binding SelectedEtat, Mode=TwoWay}"  Title="Sélectionner L'état"  FontSize="Medium" Margin="0"  SelectedIndexChanged="Picker_Etat_SelectedIndexChanged"  />
+                    <!--<Label Text="N°Serie :" FontSize="Medium" />-->
+                    <dxe:TextEdit x:Name="Entry_NSerie"  IsVisible="False" LabelText="N°Serie " Focused="Entry_NSerie_Focused" Unfocused="Entry_NSerie_Unfocused"  TextFontSize="Medium" Margin="0"   />
+                    <dxe:TextEdit x:Name="Entry_Quantité"  LabelText="QTY"   Focused="Entry_Quantité_Focused" Unfocused="Entry_Quantité_Unfocused"  TextFontSize="Medium" Margin="0" >
+                    </dxe:TextEdit>
+                    <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                        <dxco:SimpleButton x:Name="Btn_Cancel" Text="Cancel" Clicked="Btn_Cancel_Clicked"  HorizontalOptions="FillAndExpand"  BackgroundColor="DeepSkyBlue" TextColor="White"/>
+
+                        <dxco:SimpleButton x:Name="Btn_Save" Text="Save"  Clicked="Btn_Save_Clicked" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"  BackgroundColor="DeepSkyBlue" TextColor="White"></dxco:SimpleButton>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+
+                        <dxco:SimpleButton x:Name="Btn_GO" Text="Inventaires Physiques" Clicked="Btn_GO_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="DeepSkyBlue" TextColor="White"></dxco:SimpleButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"  CharacterSpacing="3"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

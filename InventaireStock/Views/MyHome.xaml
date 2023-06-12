@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.MyHome"
+            Title=" GESTION INVENTAIRE STOCK">
+    <ContentPage.Content>
+        <ScrollView>
+        <VerticalStackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Spacing="20" Padding="20">
+                    
+                    <Grid RowDefinitions="100,Auto,*"  ColumnDefinitions="*,*">
+                        
+                        <ImageButton  x:Name="Btn_Inventaire"   Clicked="Btn_Inventaire_Clicked"  Source="network.png"  Grid.Column="0" Grid.Row="0" VerticalOptions="StartAndExpand" Margin="-20,0,9,1"/>
+                        <Label Text="INVENTAIRE"
+                          HorizontalOptions="Start"
+                          VerticalOptions="CenterAndExpand"  Margin="0,8,2,-100"/>
+
+                        <ImageButton x:Name="Btn_LogOut" Clicked="Btn_LogOut_Clicked"  Source="exit.png"  Grid.Column="1" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Margin="10,0,2,1"/>
+                        <Label Grid.Column="1" Text="LOG OUT" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,8,2,-110"/>
+
+
+                        <ImageButton  x:Name="Btn_DeleteInventaire"   Clicked="Btn_DeleteInventaire_Clicked" Source="delete.png" Grid.Row="1" Grid.Column="0" Margin="-50,40,6,20"></ImageButton>
+                        <Label Text="Purger" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="-50,0,8,-380" ></Label>
+
+                        <ImageButton x:Name="Btn_ManagUser"  Clicked="Btn_ManagUser_Clicked"  Source="business_users" Grid.Row="1" Grid.Column="1" Margin="10,15,8,0"></ImageButton>
+                        <Label Text="MANAGEMENT_USER" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,10,0,-380" ></Label>
+                        <ImageButton x:Name="imgbtn_Import" Source="export.png" Clicked="imgbtn_Import_Clicked" Grid.Row="2" Grid.Column="0" Margin="0,20,-10,-15"></ImageButton>
+
+                        <Label Text="Import" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="-60,0,8,-650"></Label>
+
+                        <ImageButton x:Name="Btn_Export" Source="export.png" Clicked="Btn_Export_Clicked" Grid.Row="2" Grid.Column="1" Margin="0,20,-10,-15"></ImageButton>
+                        <Label Text="Export"  Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="10,0,5,-650" ></Label>
+                        
+                    </Grid>
+                </StackLayout>
+             <StackLayout VerticalOptions="EndAndExpand">
+                    <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="0,50,-2,0" CharacterSpacing="2"/>
+                </StackLayout>
+        </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

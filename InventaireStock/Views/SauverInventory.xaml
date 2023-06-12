@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.SauverInventory"
+             Title="SAUVER LES INVENTAIRES">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <ActivityIndicator x:Name="activity" />
+                <!--<Button x:Name="Btn_Export" Text="Export" Clicked="Btn_Export_Clicked" />-->
+                <Label x:Name="Lbl_Export" Text="Export" FontAttributes="Bold" TextColor="Black" CharacterSpacing="2" HorizontalOptions="CenterAndExpand"/>
+                <Frame WidthRequest="80" HorizontalOptions="CenterAndExpand"   BorderColor="Black" >
+
+                    <ImageButton x:Name="BtnS_Export" Source="export.png" Clicked="BtnS_Export_Clicked" BackgroundColor="White"/>                </Frame>
+
+                <!--<ImageButton x:Name="imgbtn_retour" Source="back48.png" Clicked="Imgbtn_retour_Clicked" HorizontalOptions="EndAndExpand" />-->
+
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label x:Name="labelcr2" Text="COPYRIGHT © PROVISION 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" CharacterSpacing="5"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.VSITEEMPL"
+             Title="EMPLACEMENT">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="8" Padding="15">
+                <Label Text="DIRECTION : " FontSize="Medium" />
+                <StackLayout Orientation="Horizontal">
+                    <dxe:TextEdit x:Name="Entry_Site" Focused="Entry_Site_Focused" Unfocused="Entry_Site_Unfocused" IsEnabled="False" TextChanged="Entry_Site_TextChanged" Completed="Entry_Site_Completed" HorizontalOptions="FillAndExpand"  TextFontSize="Medium"  />
+                    <ImageButton x:Name="Img_Button_Filter_Site" Source="search.png"  Clicked="Img_Button_Filter_Site_Clicked"   BackgroundColor="White"/>
+                </StackLayout>
+                <Label Text="EMPLACEMENT : "  FontSize="Medium" />
+                <StackLayout Orientation="Horizontal">
+                    <dxe:TextEdit x:Name="Entry_Empl" Focused="Entry_Empl_Focused" Unfocused="Entry_Empl_Unfocused"  TextChanged="Entry_Empl_TextChanged" HorizontalOptions="FillAndExpand"    Completed="Entry_Empl_Completed"  IsEnabled="False"/>
+                    <ImageButton x:Name="Img_Button_Filter_Empl" Source="search.png"  Clicked="Img_Button_Filter_Empl_Clicked"  IsEnabled="True" BackgroundColor="White"/>
+                </StackLayout>
+                <Label Text="NUM BUREAU : "  FontSize="Medium" />
+                <StackLayout Orientation="Horizontal">
+                    <dxe:TextEdit x:Name="Entry_Bureau" Focused="Entry_Bureau_Focused" Unfocused="Entry_Bureau_Unfocused"  TextChanged="Entry_Bureau_TextChanged" HorizontalOptions="FillAndExpand"    Completed="Entry_Bureau_Completed"  IsEnabled="True"/>
+                    <ImageButton x:Name="Img_Button_Filter_Bureau" Source="search.png" IsVisible="False"  Clicked="Img_Button_Filter_Bureau_Clicked"  IsEnabled="True" BackgroundColor="White"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="8">
+                    <!--<Button Text="Logout" Command="{Binding LogOutCommand}" HorizontalOptions="FillAndExpand"  />-->
+                    <dxco:SimpleButton x:Name="btn_Affiche" Text="Affichage"  Clicked="btn_Affiche_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="DeepSkyBlue" TextColor="White" IsEnabled="False"></dxco:SimpleButton>
+
+                    <dxco:SimpleButton x:Name="btn_Suivant" Text="Suivant"  Clicked="btn_Suivant_Clicked" IsEnabled="False" HorizontalOptions="FillAndExpand" BackgroundColor="DeepSkyBlue" TextColor="White"></dxco:SimpleButton>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" CharacterSpacing="3"      />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

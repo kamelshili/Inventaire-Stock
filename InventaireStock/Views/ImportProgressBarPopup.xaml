@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+       xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             x:Class="InventaireStock.Views.ImportProgressBarPopup" >
+
+    <!--<Popups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+       
+    </Popups:PopupPage.Animation>-->
+
+    <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="Center" CornerRadius="10" 
+           Margin="20" Padding="20" HeightRequest="200">
+
+        <VerticalStackLayout Margin="20" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+            <Label Text="Chargement " FontSize="Large" FontAttributes="Bold"/>
+
+            <ProgressBar ProgressColor="Green" HeightRequest="20" 
+                         WidthRequest="400" x:Name="LinearProgressBar"/>
+            <Label  HorizontalOptions="EndAndExpand" x:Name="progressLabel" FontAttributes="Bold" FontSize="Medium"/>
+            <!--<Button Text="Close" Clicked="Boutton_Clicked"/>-->
+        </VerticalStackLayout>
+    </Frame>
+
+</mct:Popup>

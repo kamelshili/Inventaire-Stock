@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.UpdateUser"
+             Title="UpdateUser">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label x:Name="Label_User" Text="User " CharacterSpacing="8" FontAttributes="Bold" TextColor="Black"/>
+                <dxe:TextEdit x:Name="txt_User" Focused="txt_User_Focused" Unfocused="txt_User_Unfocused" Completed="txt_User_Completed" />
+                <Label x:Name="Label_Password" Text="Password " CharacterSpacing="8" FontAttributes="Bold" TextColor="Black"/>
+                <dxe:PasswordEdit x:Name="txt_Password"  Focused="txt_Password_Focused" Unfocused="txt_Password_Unfocused" TextChanged="txt_Password_TextChanged" Completed="txt_Password_Completed" IsEnabled="False">
+                    <!--<Entry.Effects>
+                        <ef:ShowHidePassEffect />
+                    </Entry.Effects>-->
+                </dxe:PasswordEdit>
+                <StackLayout Orientation="Horizontal">
+                    <dxco:SimpleButton x:Name="Btn_Cancel" Text="Cancel" Clicked="Btn_Cancel_Clicked"  HorizontalOptions="FillAndExpand"  BackgroundColor="DeepSkyBlue" TextColor="White"/>
+                    <dxco:SimpleButton x:Name="Btn_Save" Text="Save"  Clicked="Btn_Save_Clicked" HorizontalOptions="FillAndExpand" IsEnabled="False" BackgroundColor="DeepSkyBlue" TextColor="White" ></dxco:SimpleButton>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label x:Name="labelcr2" Text="COPYRIGHT © PROVISION 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" CharacterSpacing="5"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

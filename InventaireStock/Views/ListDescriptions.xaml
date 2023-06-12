@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventaireStock.Views.ListDescriptions">
+    <ContentPage.Content>
+    <StackLayout>
+        <Label x:Name="Lbl_Total" Text="Total : "/>
+        <Entry x:Name="txt_search" Placeholder="Chercher Par Description" Focused="txt_search_Focused" Unfocused="txt_search_Unfocused" TextChanged="txt_search_TextChanged" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+        <ListView x:Name="listInventaire"  VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="listInventaire_ItemSelected" ItemTapped="listInventaire_ItemTapped"   
+                  BackgroundColor="WhiteSmoke">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <TextCell   Detail="{Binding Description}" Height="60"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

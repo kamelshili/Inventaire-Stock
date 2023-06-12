@@ -1,0 +1,175 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+    	<OutputType>Exe</OutputType>
+		<UseMaui>true</UseMaui>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SingleProject>true</SingleProject>
+		<RootNamespace>InventaireStock</RootNamespace>
+
+		<!-- Display name -->
+		<ApplicationTitle>InventaireStock</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.InventaireStock</ApplicationId>
+		<ApplicationIdGuid>3A5F27B0-3EFC-4CFC-B4BD-ADC888166239</ApplicationIdGuid>
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<UseInterpreter Condition="$(TargetFramework.Contains('-ios')) AND '$(Configuration)' == 'Release'">True</UseInterpreter>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
+	  <ApplicationId>com.tunitrack.inventairestock</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <ApplicationId>com.tunitrack.inventairestock</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <ApplicationId>com.tunitrack.inventairestock</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <ApplicationId>com.tunitrack.inventairestock</ApplicationId>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<!--<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />-->
+		<MauiSplashScreen Include="Resources\Splash\splashscreen.svg" Color="#512BD4" BaseSize="128,128" />
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\Images\add_business_user.png" />
+	  <None Remove="Resources\Images\business_users.png" />
+	  <None Remove="Resources\Images\delete.png" />
+	  <None Remove="Resources\Images\edit_male_user.png" />
+	  <None Remove="Resources\Images\exit.png" />
+	  <None Remove="Resources\Images\export.png" />
+	  <None Remove="Resources\Images\importfromcsv.png" />
+	  <None Remove="Resources\Images\login_icon.png" />
+	  <None Remove="Resources\Images\network.png" />
+	  <None Remove="Resources\Images\remove_business_user.png" />
+	  <None Remove="Resources\Images\search.png" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Camera.MAUI" Version="1.2.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
+		<PackageReference Include="DevExpress.Maui.Charts" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.CollectionView" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.Editors" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.Core" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.DataGrid" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.Controls" Version="22.2.6" />
+		<PackageReference Include="DevExpress.Maui.Scheduler" Version="22.2.6" />
+		<PackageReference Include="GemBox.Spreadsheet" Version="49.0.1335" />
+		<PackageReference Include="Google.Apis.Core" Version="1.60.0" />
+		<PackageReference Include="Mopups" Version="1.1.1" />
+		<PackageReference Include="Plugin.Toast" Version="2.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+		<PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.1.1" />
+		<TrimmableAssembly Include="DevExpress.Data.v22.2" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Update="Views\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MyHome.xaml.cs">
+	    <DependentUpon>MyHome.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ManagementUser.xaml.cs">
+	    <DependentUpon>ManagementUser.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\DeleteInventory.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ImportFromCsv.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ImportProgressBarPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListBureau.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListeEmpls.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListInventaire.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListInventairePh.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListMarque.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListModele.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListDescriptions.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListFamille.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListSFamille.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListSites.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MyHome.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ManagementUser.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SauverInventory.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Setting.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UpdateUser.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VInventaire.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VSITEEMPL.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$((Configuration)'=='Release'">
+		<AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyStore>..\key.keystore</AndroidSigningKeyStore>
+		<AndroidSigningStorePass>tunitrack</AndroidSigningStorePass>
+		<AndroidsigningKeyAlias>inventaire</AndroidsigningKeyAlias>
+		<AndroidsigningKeyPass>tunitrack</AndroidsigningKeyPass>
+		
+	</PropertyGroup>
+</Project>

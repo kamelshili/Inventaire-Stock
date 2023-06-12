@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.ImportFromCsv"
+             Title="ImportFromCsv">
+    <ContentPage.Content>
+        <StackLayout>
+            <dxco:SimpleButton Text="Import From Excel" Clicked="Button_Clicked" HorizontalOptions="Center" 
+                VerticalOptions="CenterAndExpand" BackgroundColor="Red" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

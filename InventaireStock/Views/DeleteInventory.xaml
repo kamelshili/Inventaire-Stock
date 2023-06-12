@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="InventaireStock.Views.DeleteInventory"
+             Title="PURGER LES INVENTAIRES PHYSIQUES">
+    <StackLayout>
+        <StackLayout>
+            <Label x:Name="Lbl_Password" Text="Mot De Passe" CharacterSpacing="8" FontAttributes="Bold" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal">
+                <dxe:PasswordEdit x:Name="Entry_Password"  HorizontalOptions="FillAndExpand"/>
+                <ImageButton x:Name="Btn_Clear" Source="delete.png" Clicked="Btn_Clear_Clicked" BackgroundColor="White"  />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand" BackgroundColor="Gray" >
+            <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" CharacterSpacing="1"  Padding="10"  Margin="30,0,0,5"  />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
